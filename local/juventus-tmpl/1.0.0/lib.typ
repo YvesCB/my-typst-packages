@@ -27,10 +27,13 @@
   set heading(
     numbering: "1.1",
   )
+  set par(
+    leading: 0.8em,
+  )
 
   box(inset: (top: 14em, bottom: 1em), line(length: 100%, stroke: 2.5pt))
-  par(text(size: 32pt, weight: "bold", title))
-  par(text(size: 32pt, subtitle))
+  par(spacing: 2em, leading: 1em, text(size: 32pt, weight: "bold", title))
+  par(leading: 1em, text(size: 32pt, subtitle))
 
   box(width: 60%, inset: (top: 10em))[
     #summary \
