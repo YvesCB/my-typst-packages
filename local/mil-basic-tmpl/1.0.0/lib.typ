@@ -17,9 +17,9 @@
       columns: (1fr, 1fr),
       align: (left, left),
       box(inset: (x: -3.4em, y: 0em), image(
-        "./Logo_der_Schweizerischen_Eidgenossenschaft.png",
+        "./swiss-banner.png",
         width: auto,
-        height: 5em,
+        height: 3em,
       )),
       text(size: 8pt, luma(100), [Eidgenössisches Department für Verteidigung \
         Bevölkerungsschutz und Sport VBS \ \
