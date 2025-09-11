@@ -4,7 +4,7 @@
   doc_title: "",
   classification: "INTERN",
   classification_attach: "INTERN",
-  zugehoerigkeit: [EKF Abt 52 \ Aw Zug],
+  zugehoerigkeit: [Kompanie \ Zug],
   ort: "Ort",
   author: "Vorname Name",
   funktion: "CI",
