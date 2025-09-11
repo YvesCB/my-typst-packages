@@ -62,7 +62,7 @@
   set enum(
     numbering: "1.a.",
     indent: 0.5em,
-    body-indent: 1em,
+    body-indent: 0.6em,
   )
 
   set list(
@@ -72,11 +72,11 @@
 
   align(right, [*#classification* \ *Beilage(n) #classification_attach*])
 
-  block(inset: (left: -std-margin), zugehoerigkeit)
-
   block(inset: (left: -std-margin), text(size: 13pt, weight: "bold", doc_title))
 
   doc
 
-  block(inset: (top: 3em))[#author \ #funktion]
+  block(zugehoerigkeit)
+
+  block()[#author \ #funktion]
 }
