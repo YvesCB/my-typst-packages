@@ -1,12 +1,18 @@
+#let std-margin = 4em
+
 #let conf(
   doc_title: "",
   classification: "INTERN",
   classification_attach: "INTERN",
+  zugehoerigkeit: [EKF Abt 52 \ Aw Zug],
+  ort: "Ort",
+  author: "Vorname Name",
+  funktion: "CI",
   doc,
 ) = {
   set page(
     paper: "a4",
-    margin: (top: 8em, bottom: 6em),
+    margin: (top: 8em, bottom: 6em, left: std-margin + 5em),
     header: grid(
       columns: (1fr, 1fr),
       align: (left, left),
@@ -18,28 +24,59 @@
       text(size: 8pt, luma(100), [Eidgenössisches Department für Verteidigung \
         Bevölkerungsschutz und Sport VBS \ \
         *Schweizer Armee* \
-        FUB - FU Br 41]),
+        Kdo Cyber]),
     ),
     header-ascent: 20%,
-    footer: context [
-      #line(length: 100%)
-      #grid(
-        columns: (1fr, 1fr),
-        align: (left, right),
-        text(size: 8pt, doc_title), text(size: 8pt, counter(page).display("1/1", both: true)),
-      ),
-    ],
+    footer: context {
+      box(inset: (x: -std-margin))[
+        #line(length: 100%)
+        #grid(
+          columns: (1fr, 1fr),
+          align: (left, right),
+          text(size: 8pt, doc_title), text(size: 8pt, counter(page).display("1/1", both: true)),
+        )
+      ]
+    },
   )
+
 
   set text(
     font: "Liberation Sans",
+    size: 11pt,
   )
 
   set heading(
     numbering: "1.1",
   )
 
+  show heading: it => context {
+    set text(size: 11pt)
+    set block(inset: (x: -std-margin))
+    grid(
+      columns: (std-margin, auto),
+      align: (left, left),
+      counter(heading).display("1.1"), it.body,
+    )
+  }
+
+  set enum(
+    numbering: "1.a.",
+    indent: 0.5em,
+    body-indent: 1em,
+  )
+
+  set list(
+    indent: 0.5em,
+    body-indent: 1em,
+  )
+
   align(right, [*#classification* \ *Beilage(n) #classification_attach*])
 
+  block(inset: (left: -std-margin), zugehoerigkeit)
+
+  block(inset: (left: -std-margin), text(size: 13pt, weight: "bold", doc_title))
+
   doc
+
+  block(inset: (top: 3em))[#author \ #funktion]
 }
