@@ -51,12 +51,8 @@
 
   show heading: it => context {
     set text(size: 11pt)
-    set block(inset: (x: -std-margin))
-    grid(
-      columns: (std-margin, auto),
-      align: (left, left),
-      counter(heading).display("1.1"), it.body,
-    )
+    place(dx: -std-margin, counter(heading).display("1.1"))
+    it.body
   }
 
   set enum(
