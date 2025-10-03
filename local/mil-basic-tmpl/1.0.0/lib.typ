@@ -24,7 +24,7 @@
       text(size: 8pt, luma(100), [Eidgenössisches Department für Verteidigung \
         Bevölkerungsschutz und Sport VBS \ \
         *Schweizer Armee* \
-        Kdo Cyber]),
+        Kdo Cyber - Führungsunterstützungsbrigade 41]),
     ),
     header-ascent: 20%,
     footer: context {
@@ -57,13 +57,14 @@
 
   set enum(
     numbering: "1.a.",
-    indent: 0.5em,
+    indent: 0em,
     body-indent: 0.6em,
   )
 
   set list(
-    indent: 0.5em,
+    indent: 0em,
     body-indent: 1em,
+    marker: ("-", "○"),
   )
 
   align(right, [*#classification* \ *Beilage(n) #classification_attach*])
